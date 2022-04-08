@@ -73,3 +73,13 @@ button{
 table, th, td {
     border:1px solid black;
 }
+
+/* ******** boutton crée **************/
+.delete{
+    background-color: lightgreen;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+    margin-right: 10px;
+}

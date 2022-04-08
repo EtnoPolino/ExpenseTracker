@@ -17,30 +17,35 @@ function addExpense(){
     const tr = document.createElement('tr');
     tableBody.appendChild(tr);
 
+
+
     const itemValues = []
-    itemValues.push(`${nameItem.value}`, `${dateItem.value}`, `${amountItem.value}`, `${nameItem.value}`);
-    console.log(itemValues);
+    itemValues.push(`${nameItem.value}`, `${dateItem.value}`, `${amountItem.value}`);
 
     const td = [];
-    for(let i = 0; i < 4; i++){
+    for(let i = 0; i < 3; i++){
         td [i] = document.createElement('td');
         tr.appendChild(td[i]);
         td[i].innerHTML = itemValues[i];
     }
 
-    
+/*****************creation bouton delete*******************/    
+    const buttonDelete = document.createElement('button');
+    buttonDelete.innerHTML = '+';
+    buttonDelete.classList.add('delete');
+    tr.appendChild(buttonDelete);
+/*********************************************************/
 
-
-
-
-  /* ----  addevent on button ----
-  const button = document.createElement('button');
-  button.innerHTML = '+'; */
+buttonDelete.addEventListener('click', (e) => {
+    tableBody.parentNode.removeChild(tableBody);
+    return false;
+});
 
   /* reinitialisation of value */  
     nameItem.value = '';
     dateItem.value = '';
     amountItem.value = '';
+  
 }
 
 buttonExpense.addEventListener('click', addExpense);
